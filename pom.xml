@@ -1,9 +1,9 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.khubla.antlr4example</groupId>
+	<groupId>com.zhenglinj.antlr4example</groupId>
 	<artifactId>antlr4example</artifactId>
 	<packaging>jar</packaging>
-	<name>khubla.com Antlr4 Example</name>
+	<name>Antlr4 Example</name>
 	<version>1.0-SNAPSHOT</version>
 	<properties>
 		<antlr.version>4.7.2</antlr.version>
@@ -20,29 +20,10 @@
 	<build>
 		<plugins>
 			<plugin>
-				<groupId>com.googlecode.maven-download-plugin</groupId>
-				<artifactId>download-maven-plugin</artifactId>
-				<version>1.4.0</version>
-				<executions>
-					<execution>
-						<phase>generate-sources</phase>
-						<goals>
-							<goal>wget</goal>
-						</goals>
-						<configuration>
-							<url>https://raw.githubusercontent.com/antlr/grammars-v4/master/cobol85/Cobol85.g4</url>
-							<outputFileName>Cobol85.g4</outputFileName>
-							<outputDirectory>src/main/antlr4/com/khubla/antlr4example/</outputDirectory>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
-			<plugin>
 				<groupId>org.antlr</groupId>
 				<artifactId>antlr4-maven-plugin</artifactId>
 				<version>${antlr.version}</version>
 				<configuration>
-					<grammars>arithmetic.g4</grammars>
 					<visitor>true</visitor>
 					<listener>true</listener>
 				</configuration>
@@ -67,7 +48,7 @@
 						<configuration>
 							<transformers>
 								<transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-									<mainClass>com.khubla.antlr4example.Main</mainClass>
+									<mainClass>com.zhenglinj.antlr4example.Java8</mainClass>
 								</transformer>
 							</transformers>
 						</configuration>
